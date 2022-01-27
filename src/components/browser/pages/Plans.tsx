@@ -4,8 +4,24 @@ const PlansSt = styled.div`
   height: calc(100% - 5rem);
   /* background: #131212; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  h2 {
+    font-family: "Roboto 900";
+    font-size: 2rem;
+    color: white;
+    /* background: red; */
+    width: 80%;
+  }
+  h3 {
+    margin-top: 1rem;
+    font-family: "Roboto 300";
+    font-size: 1rem;
+    color: #c7c7c7;
+    /* background: red; */
+    width: 80%;
+  }
   .plans-container {
     width: 100%;
     height: 40rem;
@@ -82,7 +98,7 @@ const PlansSt = styled.div`
     align-items: center;
     .plans-container {
       width: 84rem;
-      height: 40rem;
+      height: auto;
       /* background: red; */
       display: grid;
       grid-template-columns: 20rem 20rem 20rem 20rem;
@@ -94,7 +110,7 @@ const PlansSt = styled.div`
         /* background: #0c0c0c; */
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 15rem 5rem 5rem 5rem 5rem;
+        grid-template-rows: 15rem 5rem 5rem 5rem;
         gap: 1rem;
         justify-content: center;
         align-content: center;
@@ -146,13 +162,14 @@ const PlansSt = styled.div`
 const Plans = () => {
   return (
     <PlansSt>
+      <h2>Mira desde cualquier lugar.</h2>
       <div className="plans-container">
         <div className="plan display-none">
           <section className="section"></section>
           <section className="section section-titles">Pantallas</section>
           <section className="section section-titles">Precio mensual</section>
           <section className="section section-titles">Resolución</section>
-          <section className="section"></section>
+          {/* <section className="section"></section> */}
         </div>
 
         <div className="plan">
@@ -178,7 +195,7 @@ const Plans = () => {
             </p>
             1080p
           </section>
-          <section className="section button"></section>
+          {/* <section className="section button"></section> */}
         </div>
 
         <div className="plan">
@@ -201,7 +218,7 @@ const Plans = () => {
             </p>
             1080p
           </section>
-          <section className="section button"></section>
+          {/* <section className="section button"></section> */}
         </div>
 
         <div className="plan">
@@ -226,9 +243,13 @@ const Plans = () => {
             </p>
             1080p
           </section>
-          <section className="section button"></section>
+          {/* <section className="section button"></section> */}
         </div>
       </div>
+      <h3>
+        Si estas interesado en adquirir un plan, comunicate al 70722583 o puedes pasar a la tienda
+        MOVIE STORE CBBA, al frente del internet NAVI.
+      </h3>
     </PlansSt>
   );
 };
