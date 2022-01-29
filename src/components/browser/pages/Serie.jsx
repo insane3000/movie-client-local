@@ -530,6 +530,9 @@ const Movie = () => {
   const [spinner, setSpinner] = useState(false);
   const [spinnerPoster, setSpinnerPoster] = useState(true);
   const [errorWindow, setErrorWindow] = useState(false);
+
+  const hostMovies = document.domain === "192.168.2.249" ? "192.168.2.249" : "192.168.0.248";
+
   // ! PLAY SEASONS
   const [episodes, setEpisodes] = useState([]);
   //   const [currentSeason, setCurrentSeason] = useState([]);
@@ -596,7 +599,7 @@ const Movie = () => {
         // console.log(response.data.docs);
         seasonFiltered.map((i) => {
           seasonSelected.push({
-            file: `http://192.168.0.248:8080/NewHDD/msc-series-tv/${
+            file: `http://${hostMovies}:8080/NewHDD/msc-series-tv/${
               i.link.split("http://media.moviestorecbba.com/series-tv/")[1]
             }`,
             image: `${process.env.REACT_APP_BUCKET_EPISODES}${i.imageL}`,
@@ -651,7 +654,7 @@ const Movie = () => {
 
     seasonFiltered.map((i) => {
       seasonSelected.push({
-        file: `http://192.168.0.248:8080/NewHDD/msc-series-tv/${
+        file: `http://${hostMovies}:8080/NewHDD/msc-series-tv/${
           i.link.split("http://media.moviestorecbba.com/series-tv/")[1]
         }`,
         image: `${process.env.REACT_APP_BUCKET_EPISODES}${i.imageL}`,
@@ -741,7 +744,7 @@ const Movie = () => {
             customProps={{
               // playbackRateControls: [1, 1.25, 1.5],
               //       defaultBandwidthEstimate: 200000000,
-        //       preload: "metadata",
+              //       preload: "metadata",
               autostart: false,
               cast: {},
               //       hlsjsdefault: true,

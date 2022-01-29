@@ -511,6 +511,8 @@ const Movie = () => {
   const [spinnerPoster, setSpinnerPoster] = useState(true);
   const [errorWindow, setErrorWindow] = useState(false);
 
+  console.log(document.domain);
+  const hostMovies = document.domain === "192.168.2.249" ? "192.168.2.249" : "192.168.0.248";
   //   const modifyLink = state.link?.split(".mp4")[0];
   // ! Scroll to TOP
   const movieRef = useRef();
@@ -589,11 +591,11 @@ const Movie = () => {
   //     `http://localhost:4000/local/${state.link?.split("https://f002.backblazeb2.com/file/")[1]}`
   //   );
   //! handle REPORT MODAL
-//   const handlerReportModal = (id) => {
-//     //     console.log(location);
-//     dispatch(setModalReport(true, state._id, state.title, state.imageS, state.imageL, ""));
-//     !app.report.show && navigate(`${location.pathname}${location.search}`);
-//   };
+  //   const handlerReportModal = (id) => {
+  //     //     console.log(location);
+  //     dispatch(setModalReport(true, state._id, state.title, state.imageS, state.imageL, ""));
+  //     !app.report.show && navigate(`${location.pathname}${location.search}`);
+  //   };
   return (
     <MovieSt>
       <div className="movie-container" ref={movieRef}>
@@ -649,7 +651,7 @@ const Movie = () => {
               playerScript="https://api.moviestorecbba.com/static/KB5zFt7A.js"
               file={state.link.replace(
                 "https://f002.backblazeb2.com/file/",
-                "http://192.168.0.248:8080/NewHDD/"
+                `http://${hostMovies}:8080/NewHDD/`
               )}
               //       file="http://192.168.0.248:8080/movies/300.mp4"
               //       file={`http://localhost:4000/local/${
